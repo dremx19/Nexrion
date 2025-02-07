@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farewell - Nasr Boys School 2025</title>
+    <style>
+        /* Material You inspired theme with green and blue blend */
+        :root {
+            --primary-color: #03DAC6; /* Teal */
+            --secondary-color: #6200EE; /* Deep Purple */
+            --background-color: #FFFFFF; /* White */
+            --surface-color: #F5F5F5; /* Light Gray */
+            --text-color: #000000; /* Black */
+            --text-secondary-color: #757575; /* Gray */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Windows 11 Ring Loading Animation */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--background-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .windows-ring {
+            width: 60px;
+            height: 60px;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-family: 'Calibri', sans-serif; /* Use Calibri font */
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #03DAC6, #6200EE, #FF0266, #FFD700);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 4s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--surface-color);
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .media {
+            margin-bottom: 20px;
+        }
+
+        .media h2 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .media img, .media video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-us {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--background-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-us h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .about-us p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary-color);
+        }
+
+        .contributors {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            background-color: var(--background-color);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contributors h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .contributors a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contributors a:hover {
+            text-decoration: underline;
+        }
+
+        /* Fire Effect for Copyright Section */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #FFFFFF;
+            margin-top: 20px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #FF4500, #FFD700, #FF0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fire 2s ease-in-out infinite;
+        }
+
+        @keyframes fire {
+            0% { text-shadow: 0 0 5px #FF4500, 0 0 10px #FF4500, 0 0 20px #FF4500, 0 0 40px #FF4500; }
+            50% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 80px #FFD700; }
+            100% { text-shadow: 0 0 5px #FF0000, 0 0 10px #FF0000, 0 0 20px #FF0000, 0 0 40px #FF0000; }
+        }
+    </style>
+    <!-- Add Google Fonts for Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Windows 11 Ring Loading Animation -->
+    <div id="loading">
+        <div class="windows-ring"></div>
+        <div class="loading-text">Powered By Nexrion©</div>
+    </div>
+
+    <header>
+        <h1>Farewell - Nasr Boys School 2025</h1>
+        <p>Celebrating the memories and achievements of our students</p>
+    </header>
+
+    <div class="container">
+        <!-- About Us Section -->
+        <section class="about-us">
+            <h2>About Us</h2>
+            <p>
+                Hello! I am a passionate Nasrite, deeply connected to the legacy and values of Nasr Boys School, Hyderabad. 
+                This website is a tribute to the unforgettable memories we've created together. 
+                As a tech enthusiast, I am hosting this website on a <strong>Raspberry Pi cluster</strong>, showcasing my love for both technology and my alma mater. 
+                Feel free to explore and relive the moments that made our time at Nasr so special.
+            </p>
+        </section>
+
+        <!-- Memorable Moments Section -->
+        <section class="media">
+            <h2>Memorable Moments</h2>
+            <a href="https://ibb.co/2bTW804"><img src="https://i.ibb.co/VKsJH04/nasr1.jpg" alt="nasr1" border="0" /></a>
+            <a href="https://ibb.co/Kzx9Kw0X"><img src="https://i.ibb.co/wrhKcs0R/nasr2.jpg" alt="nasr2" border="0" /></a>
+            <a href="https://ibb.co/N2pXx0cf"><img src="https://i.ibb.co/tpcSB0Vn/nasr3.jpg" alt="nasr3" border="0"></a>
+        </section>
+
+        <!-- Farewell Video Section -->
+        <section class="media">
+            <h2>Farewell Video</h2>
+            <video controls>
+                <source src="farewell_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- Contributors Section -->
+        <section class="contributors">
+            <h2>We Need Your Support!</h2>
+            <p>
+                We are looking for contributors to help us document and preserve these precious memories. 
+                If you have photos, videos, or stories to share, please contact us at:
+            </p>
+            <a href="mailto:nexrion@myyahoo.com">nexrion@myyahoo.com</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nexrion. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to Hide Loading Animation After 7 Seconds -->
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                const loading = document.getElementById('loading');
+                loading.style.display = 'none';
+            }, 7000); // 7 seconds delay
+        });
+    </script>
+</body>
+</html>
